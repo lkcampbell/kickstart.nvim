@@ -100,6 +100,7 @@ vim.g.have_nerd_font = false
 
 -- Make line numbers default
 vim.opt.number = true
+
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
@@ -115,7 +116,9 @@ vim.opt.showmode = false
 --  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
 
--- Enable break indent
+-- Enable break indent.
+-- This assures that indentation is preserved across multiple lines.
+-- It keeps horizontal blocks lined up properly.
 vim.opt.breakindent = true
 
 -- Save undo history
@@ -125,10 +128,14 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- Keep signcolumn on by default
+-- Keep signcolumn on by default.
+-- This only matters when functionality that uses the sign column is used.
+-- The sign column is the one to the left of the line numbers column.
 vim.opt.signcolumn = 'yes'
 
--- Decrease update time
+-- Decrease update time.
+-- The update time default is 4000 msec. Setting it lower will make the
+-- editor feel more responsive during idle time but uses more CPU.:w
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
@@ -136,6 +143,8 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
+-- By "new splits" they mean window splitting.
+-- New windows are added to the right or to the bottom.
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
@@ -149,10 +158,11 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
+-- Highlights the active line.
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 20
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
