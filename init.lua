@@ -135,7 +135,7 @@ vim.opt.signcolumn = 'yes'
 
 -- Decrease update time.
 -- The update time default is 4000 msec. Setting it lower will make the
--- editor feel more responsive during idle time but uses more CPU.:w
+-- editor feel more responsive during idle time but uses more CPU.
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
