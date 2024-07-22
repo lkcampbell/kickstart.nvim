@@ -187,8 +187,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagn
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Add a single or double divider line
-vim.keymap.set('n', '<leader>-', '80i-<Esc>o<Esc>', { desc = 'Draw a single divider line'})
-vim.keymap.set('n', '<leader>=', '80i=<Esc>o<Esc>', { desc = 'Draw a double divider line'})
+vim.keymap.set('n', '<leader>-', 'O<Esc>j80i-<Esc>o<Esc>k', { desc = 'Draw a single divider line'})
+vim.keymap.set('n', '<leader>=', 'O<Esc>j80i=<Esc>o<Esc>k', { desc = 'Draw a double divider line'})
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
