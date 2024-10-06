@@ -216,6 +216,14 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
+-- Set conceallevel to 2 for Markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.conceallevel = 2
+  end
+})
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
@@ -261,7 +269,9 @@ require('lazy').setup({
   },
   {
     'stevearc/oil.nvim',
-    opts = {},
+    opts = {
+      skip_confirm_for_simple_edits = true,
+    },
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
